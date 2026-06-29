@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  churn_app:
+    build: .
+    container_name: churn_prediction_app
+    ports:
+      - "8000:8000"
+      - "7860:7860"
+    volumes:
+      - ./artifacts:/churn_app/artifacts
+    restart: unless-stopped
